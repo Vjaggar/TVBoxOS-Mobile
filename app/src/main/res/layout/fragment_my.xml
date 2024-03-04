@@ -168,7 +168,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
+<!--             <LinearLayout
                 android:id="@+id/tvLive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -383,7 +383,7 @@
                     app:tint="@color/text_gray" />
 
             </LinearLayout>
-
+ -->
         </LinearLayout>
 
     </ScrollView>
