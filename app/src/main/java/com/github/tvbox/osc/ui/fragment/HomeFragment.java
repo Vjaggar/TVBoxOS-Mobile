@@ -79,8 +79,8 @@ public class HomeFragment extends BaseVbFragment<FragmentHomeBinding> {
         // });
 
         mBinding.search.setOnClickListener(view -> jumpActivity(FastSearchActivity.class));
-        mBinding.ivHistory.setOnClickListener(view -> jumpActivity(HistoryActivity.class));
-        mBinding.ivCollect.setOnClickListener(view -> jumpActivity(CollectActivity.class));
+        // mBinding.ivHistory.setOnClickListener(view -> jumpActivity(HistoryActivity.class));
+        // mBinding.ivCollect.setOnClickListener(view -> jumpActivity(CollectActivity.class));
         setLoadSir(mBinding.contentLayout);
 
         initViewModel();
