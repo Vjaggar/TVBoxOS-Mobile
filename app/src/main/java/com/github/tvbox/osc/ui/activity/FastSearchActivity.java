@@ -154,9 +154,9 @@ public class FastSearchActivity extends BaseVbActivity<ActivityFastSearchBinding
 
         mBinding.etSearch.addTextChangedListener(this);
 
-        findViewById(R.id.iv_filter).setOnClickListener(view -> {
-            filterSearchSource();
-        });
+        // findViewById(R.id.iv_filter).setOnClickListener(view -> {
+        //     filterSearchSource();
+        // });
         findViewById(R.id.iv_back).setOnClickListener(view -> {
             finish();
         });

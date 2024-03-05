@@ -54,7 +54,7 @@ public class PlayingControlRightDialog extends DrawerPopupView {
         mBinding.decode.setText(mController.mPlayerIJKBtn.getText());
         //全屏的设置弹窗显示
         mBinding.landscapePortrait.setVisibility(View.VISIBLE);
-        mBinding.download.setVisibility(View.VISIBLE);
+        // mBinding.download.setVisibility(View.VISIBLE);
         updateAboutIjkVisible();
         updateSpeedUi();
     }
@@ -106,9 +106,9 @@ public class PlayingControlRightDialog extends DrawerPopupView {
         mBinding.startEndReset.setOnClickListener(view -> resetSkipStartEnd());
         mBinding.replay.setOnClickListener(view -> changeAndUpdateText(null,mController.mPlayRetry));
         mBinding.refresh.setOnClickListener(view -> changeAndUpdateText(null,mController.mPlayRefresh));
-        mBinding.subtitle.setOnClickListener(view -> dismissWith(() -> changeAndUpdateText(null,mController.mZimuBtn)));
-        mBinding.voice.setOnClickListener(view -> dismissWith(() -> changeAndUpdateText(null,mController.mAudioTrackBtn)));
-        mBinding.download.setOnClickListener(view -> dismissWith(mDetailActivity::use1DMDownload));
+        // mBinding.subtitle.setOnClickListener(view -> dismissWith(() -> changeAndUpdateText(null,mController.mZimuBtn)));
+        // mBinding.voice.setOnClickListener(view -> dismissWith(() -> changeAndUpdateText(null,mController.mAudioTrackBtn)));
+        // mBinding.download.setOnClickListener(view -> dismissWith(mDetailActivity::use1DMDownload));
     }
 
     private void updateSkipText(boolean start){

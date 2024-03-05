@@ -150,12 +150,12 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
         super.onResume();
         openBackgroundPlay = false;
         playServerSwitch(false);
-        mBinding.ivPrivateBrowsing.postDelayed(NotificationUtils::cancelAll,800);
+        // mBinding.ivPrivateBrowsing.postDelayed(NotificationUtils::cancelAll,800);
     }
 
     private void initView() {
-        mBinding.ivPrivateBrowsing.setVisibility(Hawk.get(HawkConfig.PRIVATE_BROWSING, false)?View.VISIBLE:View.GONE);
-        mBinding.ivPrivateBrowsing.setOnClickListener(view -> ToastUtils.showShort("当前为无痕浏览"));
+        // mBinding.ivPrivateBrowsing.setVisibility(Hawk.get(HawkConfig.PRIVATE_BROWSING, false)?View.VISIBLE:View.GONE);
+        // mBinding.ivPrivateBrowsing.setOnClickListener(view -> ToastUtils.showShort("当前为无痕浏览"));
         mBinding.previewPlayerPlace.setVisibility(showPreview ? View.VISIBLE : View.GONE);
 
         mBinding.mGridView.setHasFixedSize(true);
@@ -164,10 +164,10 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
 
         seriesAdapter = new SeriesAdapter(false);
         mBinding.mGridView.setAdapter(seriesAdapter);
-        mBinding.mGridViewFlag.setHasFixedSize(true);
-        mBinding.mGridViewFlag.setLayoutManager(new V7LinearLayoutManager(this.mContext, 0, false));
+        // mBinding.mGridViewFlag.setHasFixedSize(true);
+        // mBinding.mGridViewFlag.setLayoutManager(new V7LinearLayoutManager(this.mContext, 0, false));
         seriesFlagAdapter = new SeriesFlagAdapter();
-        mBinding.mGridViewFlag.setAdapter(seriesFlagAdapter);
+        // mBinding.mGridViewFlag.setAdapter(seriesFlagAdapter);
         isReverse = false;
         preFlag = "";
         if (showPreview) {
@@ -183,22 +183,22 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
                     .asCustom(new VideoDetailDialog(this, vodInfo))
                     .show();
         });
-        findViewById(R.id.tvDownload).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                use1DMDownload();
-            }
-        });
-        mBinding.tvSort.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("NotifyDataSetChanged")
-            @Override
-            public void onClick(View v) {
-                sortSeries();
-            }
-        });
-        mBinding.tvCast.setOnClickListener(v -> {
-            showCastDialog();
-        });
+        // findViewById(R.id.tvDownload).setOnClickListener(new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View view) {
+        //         use1DMDownload();
+        //     }
+        // });
+        // mBinding.tvSort.setOnClickListener(new View.OnClickListener() {
+        //     @SuppressLint("NotifyDataSetChanged")
+        //     @Override
+        //     public void onClick(View v) {
+        //         sortSeries();
+        //     }
+        // });
+        // mBinding.tvCast.setOnClickListener(v -> {
+        //     showCastDialog();
+        // });
         mBinding.tvCollect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -206,7 +206,7 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
                 if ("加入收藏".equals(text)) {
                     RoomDataManger.insertVodCollect(sourceKey, vodInfo);
                     Toast.makeText(DetailActivity.this, "已加入收藏夹", Toast.LENGTH_SHORT).show();
-                    mBinding.tvCollect.setText("取消收藏");
+                    mBinding.tvCollect.setText("已收藏");
                 } else {
                     RoomDataManger.deleteVodCollect(sourceKey, vodInfo);
                     Toast.makeText(DetailActivity.this, "已移除收藏夹", Toast.LENGTH_SHORT).show();
@@ -231,38 +231,38 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
             showAllSeriesDialog();
         });
 
-        mBinding.tvSite.setOnClickListener(view -> {
-            startQuickSearch();
-            QuickSearchDialog quickSearchDialog = new QuickSearchDialog(DetailActivity.this);
-            EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_QUICK_SEARCH, quickSearchData));
-            EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_QUICK_SEARCH_WORD, quickSearchWord));
-            quickSearchDialog.show();
-            if (pauseRunnable != null && pauseRunnable.size() > 0) {
-                searchExecutorService = Executors.newFixedThreadPool(5);
-                for (Runnable runnable : pauseRunnable) {
-                    searchExecutorService.execute(runnable);
-                }
-                pauseRunnable.clear();
-                pauseRunnable = null;
-            }
-            quickSearchDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    try {
-                        if (searchExecutorService != null) {
-                            pauseRunnable = searchExecutorService.shutdownNow();
-                            searchExecutorService = null;
-                        }
-                    } catch (Throwable th) {
-                        th.printStackTrace();
-                    }
-                }
-            });
-        });
-        mBinding.tvChangeLine.setOnClickListener(v -> {
-            FastClickCheckUtil.check(v);
-            quickLineChange();
-        });
+        // mBinding.tvSite.setOnClickListener(view -> {
+        //     startQuickSearch();
+        //     QuickSearchDialog quickSearchDialog = new QuickSearchDialog(DetailActivity.this);
+        //     EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_QUICK_SEARCH, quickSearchData));
+        //     EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_QUICK_SEARCH_WORD, quickSearchWord));
+        //     quickSearchDialog.show();
+        //     if (pauseRunnable != null && pauseRunnable.size() > 0) {
+        //         searchExecutorService = Executors.newFixedThreadPool(5);
+        //         for (Runnable runnable : pauseRunnable) {
+        //             searchExecutorService.execute(runnable);
+        //         }
+        //         pauseRunnable.clear();
+        //         pauseRunnable = null;
+        //     }
+        //     quickSearchDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+        //         @Override
+        //         public void onDismiss(DialogInterface dialog) {
+        //             try {
+        //                 if (searchExecutorService != null) {
+        //                     pauseRunnable = searchExecutorService.shutdownNow();
+        //                     searchExecutorService = null;
+        //                 }
+        //             } catch (Throwable th) {
+        //                 th.printStackTrace();
+        //             }
+        //         }
+        //     });
+        // });
+        // mBinding.tvChangeLine.setOnClickListener(v -> {
+        //     FastClickCheckUtil.check(v);
+        //     quickLineChange();
+        // });
         setLoadSir(mBinding.llLayout);
     }
 
@@ -472,10 +472,10 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
 
                     mBinding.tvName.setText(TextUtils.isEmpty(mVideo.name)?"暂无信息":mVideo.name);
                     String srcName = ApiConfig.get().getSource(mVideo.sourceKey).getName();
-                    mBinding.tvSite.setText("来源："+(TextUtils.isEmpty(srcName)?"未知":srcName));
+                    // mBinding.tvSite.setText("来源："+(TextUtils.isEmpty(srcName)?"未知":srcName));
 
                     if (vodInfo.seriesMap != null && vodInfo.seriesMap.size() > 0) {//线路
-                        mBinding.mGridViewFlag.setVisibility(View.VISIBLE);
+                        // mBinding.mGridViewFlag.setVisibility(View.VISIBLE);
                         mBinding.mGridView.setVisibility(View.VISIBLE);
                         mBinding.mEmptyPlaylist.setVisibility(View.GONE);
 
@@ -512,7 +512,7 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
 //                        setTextShow(tvPlayUrl, "播放地址：", vodInfo.seriesMap.get(vodInfo.playFlag).get(0).url);
                         //设置线路数据
                         seriesFlagAdapter.setNewData(vodInfo.seriesFlags);
-                        mBinding.mGridViewFlag.scrollToPosition(flagScrollTo);
+                        // mBinding.mGridViewFlag.scrollToPosition(flagScrollTo);
 
                         refreshList();
                         if (showPreview) {
@@ -522,7 +522,7 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
                         }
                         // startQuickSearch();
                     } else {//空布局
-                        mBinding.mGridViewFlag.setVisibility(View.GONE);
+                        // mBinding.mGridViewFlag.setVisibility(View.GONE);
                         mBinding.mGridView.setVisibility(View.GONE);
                         mBinding.mEmptyPlaylist.setVisibility(View.VISIBLE);
                     }
@@ -557,7 +557,7 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
             sourceViewModel.getDetail(sourceKey, vodId);
             boolean isVodCollect = RoomDataManger.isVodCollect(sourceKey, vodId);
             if (isVodCollect) {
-                mBinding.tvCollect.setText("取消收藏");
+                mBinding.tvCollect.setText("已收藏");
             } else {
                 mBinding.tvCollect.setText("加入收藏");
             }
@@ -804,10 +804,10 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
         //activity处理预览尺寸(全屏/非全屏预览)
         mBinding.previewPlayer.setLayoutParams(fullWindows ? windowsFull : windowsPreview);
         mBinding.mGridView.setVisibility(fullWindows ? View.GONE : View.VISIBLE);
-        mBinding.mGridViewFlag.setVisibility(fullWindows ? View.GONE : View.VISIBLE);
+        // mBinding.mGridViewFlag.setVisibility(fullWindows ? View.GONE : View.VISIBLE);
 
         //全屏下禁用详情页几个按键的焦点 防止上键跑过来
-        mBinding.tvSort.setFocusable(!fullWindows);
+        // mBinding.tvSort.setFocusable(!fullWindows);
         mBinding.tvCollect.setFocusable(!fullWindows);
         toggleSubtitleTextSize();
     }
@@ -996,7 +996,7 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
             if (currentIndex>=flags.size()){
                 currentIndex = 0;
             }
-            mBinding.mGridViewFlag.smoothScrollToPosition(currentIndex);
+            // mBinding.mGridViewFlag.smoothScrollToPosition(currentIndex);
             chooseFlag(currentIndex);
             mBinding.mGridView.postDelayed(() -> chooseSeries(vodInfo.playIndex,true),300);
         }

@@ -86,11 +86,11 @@ public class SubscriptionActivity extends BaseVbActivity<ActivitySubscriptionBin
 
         mSubscriptionAdapter.setNewData(mSubscriptions);
 
-        mBinding.ivUseTip.setOnClickListener(view -> {
-            new XPopup.Builder(this)
-                    .asCustom(new SubsTipDialog(this))
-                    .show();
-        });
+        // mBinding.ivUseTip.setOnClickListener(view -> {
+        //     new XPopup.Builder(this)
+        //             .asCustom(new SubsTipDialog(this))
+        //             .show();
+        // });
 
         mBinding.titleBar.getRightView().setOnClickListener(view -> {//添加订阅
             new XPopup.Builder(this)

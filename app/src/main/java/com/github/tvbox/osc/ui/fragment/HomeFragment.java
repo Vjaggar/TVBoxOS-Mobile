@@ -65,18 +65,18 @@ public class HomeFragment extends BaseVbFragment<FragmentHomeBinding> {
     protected void init() {
         ControlManager.get().startServer();
 
-        mBinding.nameContainer.setOnClickListener(v -> {
-            if(dataInitOk && jarInitOk){
-                showSiteSwitch();
-            }else {
-                ToastUtils.showShort("数据源未加载，长按刷新或切换订阅");
-            }
-        });
+        // mBinding.nameContainer.setOnClickListener(v -> {
+        //     if(dataInitOk && jarInitOk){
+        //         showSiteSwitch();
+        //     }else {
+        //         ToastUtils.showShort("数据源未加载，长按刷新或切换订阅");
+        //     }
+        // });
 
-        mBinding.nameContainer.setOnLongClickListener(v -> {
-            refreshHomeSouces();
-            return true;
-        });
+        // mBinding.nameContainer.setOnLongClickListener(v -> {
+        //     refreshHomeSouces();
+        //     return true;
+        // });
 
         mBinding.search.setOnClickListener(view -> jumpActivity(FastSearchActivity.class));
         mBinding.ivHistory.setOnClickListener(view -> jumpActivity(HistoryActivity.class));
@@ -108,8 +108,8 @@ public class HomeFragment extends BaseVbFragment<FragmentHomeBinding> {
 
         SourceBean home = ApiConfig.get().getHomeSourceBean();
         if (home != null && home.getName() != null && !home.getName().isEmpty()){
-            mBinding.tvName.setText(home.getName());
-            mBinding.tvName.postDelayed(() -> mBinding.tvName.setSelected(true),2000);
+            // mBinding.tvName.setText(home.getName());
+            // mBinding.tvName.postDelayed(() -> mBinding.tvName.setSelected(true),2000);
         }
         if (dataInitOk && jarInitOk) {
             showLoading();
