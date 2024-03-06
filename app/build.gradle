@@ -31,7 +31,7 @@ android {
 
         // Apk 输出配置
         variant.outputs.all { output ->
-            outputFileName = 'MBox_v' + variant.versionName + '_' + variant.buildType.name
+            outputFileName = '放映厅'
             if (variant.buildType.name == buildTypes.release.getName()) {
                 outputFileName += '_' + new Date().format("yyyyMMdd")
             }
