@@ -197,34 +197,34 @@
                         />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/parse_root"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    tools:visibility="visible">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="解析"
-                        android:textColor="@color/text_gray"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_centerVertical="true"
-                        />
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_parse"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_marginVertical="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        android:orientation="horizontal"
-                        tools:listitem="@layout/item_select_flag" />
-                </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/parse_root"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:visibility="gone"-->
+<!--                    tools:visibility="visible">-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="解析"-->
+<!--                        android:textColor="@color/text_gray"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_marginLeft="14dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        />-->
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/rv_parse"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:layout_marginVertical="4dp"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        tools:listitem="@layout/item_select_flag" />-->
+<!--                </LinearLayout>-->
 <!--                <RelativeLayout-->
 <!--                    android:layout_width="match_parent"-->
 <!--                    android:layout_height="wrap_content"-->

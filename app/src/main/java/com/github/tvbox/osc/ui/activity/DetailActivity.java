@@ -1003,7 +1003,7 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
     }
 
     public void showParseRoot(boolean show, ParseAdapter adapter){
-        mBinding.rvParse.setAdapter(adapter);
+        // mBinding.rvParse.setAdapter(adapter);
         int defaultIndex = 0;
         for (int i = 0; i < adapter.getData().size(); i++) {
             if (adapter.getData().get(i).isDefault()){
@@ -1012,8 +1012,8 @@ public class DetailActivity extends BaseVbActivity<ActivityDetailBinding> {
             }
         }
         if (defaultIndex!=0){
-            mBinding.rvParse.scrollToPosition(defaultIndex);
+            // mBinding.rvParse.scrollToPosition(defaultIndex);
         }
-        mBinding.parseRoot.setVisibility(show?View.VISIBLE:View.GONE);
+        // mBinding.parseRoot.setVisibility(show?View.VISIBLE:View.GONE);
     }
 }
