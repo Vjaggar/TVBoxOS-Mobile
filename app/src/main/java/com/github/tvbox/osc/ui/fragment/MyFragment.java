@@ -42,7 +42,7 @@ public class MyFragment extends BaseVbFragment<FragmentMyBinding> {
 
     @Override
     protected void init() {
-        mBinding.tvVersion.setText("v"+ AppUtils.getAppVersionName());
+        // mBinding.tvVersion.setText("v"+ AppUtils.getAppVersionName());
 
         // mBinding.addrPlay.setOnClickListener(v ->{
         //     new XPopup.Builder(getContext())
